@@ -41,7 +41,7 @@ public class QueryProcessorTest {
     }
 
     @Test
-    public void knowsMath() throws Exception {
+    public void knowsMoreMath() throws Exception {
         assertThat(queryProcessor.process("what is 203 plus 204"), containsString("407"));
     }
 }

@@ -19,6 +19,7 @@ public class QueryProcessor {
         }
         if (query.toLowerCase().contains("what is 203 plus 204")) {
             return "the answer is 407";
+        }
         return "";
     }
 }
