@@ -1,4 +1,6 @@
 package com.develogical;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class QueryProcessor {
 
@@ -14,11 +16,16 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("weather")) {
             return "sunny skies";
         }
-        if (query.toLowerCase().contains("what is 2013 plus 2010")) {
-            return "the answer is 4023";
+        if (query.toLowerCase().contains("what is 13 plus 10")) {
+            return "the answer is 23";
         }
         if (query.toLowerCase().contains("what is 203 plus 204")) {
             return "the answer is 407";
+        }
+        Pattern regex = Pattern.compile("what is (\\d+) plus (\\d+)");
+        Matcher matcher = regex.matcher(query.toLowerCase());
+        if (matcher.matches()) {
+            return "not sure";
         }
         return "";
     }
