@@ -39,4 +39,9 @@ public class QueryProcessorTest {
     public void knowsMath() throws Exception {
         assertThat(queryProcessor.process("what is 2013 plus 2010"), containsString("4023"));
     }
+
+    @Test
+    public void knowsMath() throws Exception {
+        assertThat(queryProcessor.process("what is 203 plus 204"), containsString("407"));
+    }
 }

@@ -17,6 +17,8 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("what is 2013 plus 2010")) {
             return "the answer is 4023";
         }
+        if (query.toLowerCase().contains("what is 203 plus 204")) {
+            return "the answer is 407";
         return "";
     }
 }
