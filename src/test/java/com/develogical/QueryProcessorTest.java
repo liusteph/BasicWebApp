@@ -49,4 +49,9 @@ public class QueryProcessorTest {
     public void knowsMultiplication() throws Exception {
         assertThat(queryProcessor.process("what is 2 multiplied by 5"), containsString("10"));
     }
+
+    @Test
+    public void knowsMax() throws Exception {
+        assertThat(queryProcessor.process("which of the following numbers is the largest: 2, 5"), containsString("5"));
+    }
 }

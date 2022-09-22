@@ -33,6 +33,12 @@ public class QueryProcessor {
         if (matcherMultiply.matches()) {
             return String.valueOf(Integer.valueOf(matcherMultiply.group(1)) * Integer.valueOf(matcherMultiply.group(2)));
         }
+
+        Pattern regexMax = Pattern.compile("which of the following numbers is the largest: (\\d+), (\\d+)");
+        Matcher matcherMax = regexMax.matcher(query.toLowerCase());
+        if (matcherMax.matches()) {
+            return String.valueOf(Math.max(Integer.valueOf(matcherMax.group(1)), Integer.valueOf(matcherMax.group(2))));
+        }
         return "";
     }
 }
