@@ -35,4 +35,8 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("what is the weather today"), containsString("sunny"));
     }
 
+    @Test
+    public void knowsMath() throws Exception {
+        assertThat(queryProcessor.process("what is 2013 plus 2010"), containsString("4023"));
+    }
 }
