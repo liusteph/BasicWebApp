@@ -22,10 +22,16 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("what is 203 plus 204")) {
             return "the answer is 407";
         }
-        Pattern regex = Pattern.compile("what is (\\d+) plus (\\d+)");
-        Matcher matcher = regex.matcher(query.toLowerCase());
-        if (matcher.matches()) {
-            return "not sure";
+        Pattern regexAdd = Pattern.compile("what is (\\d+) plus (\\d+)");
+        Matcher matcherAdd = regexAdd.matcher(query.toLowerCase());
+        if (matcherAdd.matches()) {
+            return String.valueOf(Integer.valueOf(matcherAdd.group(1)) + Integer.valueOf(matcherAdd.group(2)));
+        }
+
+        Pattern regexMultiply = Pattern.compile("what is (\\d+) multiplied by (\\d+)");
+        Matcher matcherMultiply = regexMultiply.matcher(query.toLowerCase());
+        if (matcherMultiply.matches()) {
+            return String.valueOf(Integer.valueOf(matcherMultiply.group(1)) * Integer.valueOf(matcherMultiply.group(2)));
         }
         return "";
     }

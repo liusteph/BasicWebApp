@@ -5,8 +5,6 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class QueryProcessorTest {
 
@@ -43,7 +41,12 @@ public class QueryProcessorTest {
     }
 
     @Test
-    public void knowsMath() throws Exception {
-        assertThat(queryProcessor.process("what is 2 plus 5"), containsString("not sure"));
+    public void knowsAddition() throws Exception {
+        assertThat(queryProcessor.process("what is 2 plus 5"), containsString("7"));
+    }
+
+    @Test
+    public void knowsMultiplication() throws Exception {
+        assertThat(queryProcessor.process("what is 2 multiplied by 5"), containsString("10"));
     }
 }
